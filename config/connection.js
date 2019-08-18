@@ -1,7 +1,7 @@
 var mysql = require("mysql");
-require("dotenv").config();
-
-
+// require("dotenv").config();
+if (process.env.NODE_ENV !== 'production') { require('dotenv').config() }
+var connection;
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -37,7 +37,7 @@ connection.config.typeCast = function(field, next) {
 //   }
 //   console.log("connected as id " + connection.threadId);
 // });
-connection.connect();
+// connection.connect();
 module.exports = connection;
 // ---------------
 
