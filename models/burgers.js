@@ -13,11 +13,11 @@ var burgers = {
       cb(res);
     });
   },
-//   update: function(objColVals, condition, cb) {
-//     orm.update("cats", objColVals, condition, function(res) {
-//       cb(res);
-//     });
-//   }
+  updateOne: function(objColVals, condition, cb) {
+    orm.updateOne("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  }
 };
 
 // Export the database functions for the controller (catsController.js).
