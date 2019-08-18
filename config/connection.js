@@ -37,7 +37,7 @@ connection.config.typeCast = function(field, next) {
 //   }
 //   console.log("connected as id " + connection.threadId);
 // });
-
+connection.connect();
 module.exports = connection;
 // ---------------
 
