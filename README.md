@@ -1,6 +1,6 @@
 # [Eat Da Burger](https://hidden-lake-12986.herokuapp.com/)
 
-___
+
     This is an app in Node, Sequalize, MySql and ORM. User enters the name of Burger in the textbox and submit the button. That name will appler in the ordered item left side with Devour button. Once the Devour button clicked it will jump on to the list of Burgers already devoured on right side.
 
 
