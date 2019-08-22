@@ -1,32 +1,29 @@
-$(function(){
-    $('.btnSubmit').on('click',function(){
-        
-        // alert($('#txtIput').val());
+$(function () {
+  $('.btnSubmit').on('click', function () {
 
-        let newBurger = {
-            burger_name:$('#txtIput').val().trim(),
-            devoured:0
-        }
+    let newBurger = {
+      burger_name: $('#txtIput').val().trim(),
+      devoured: 0
+    }
 
-        $.ajax("/api/burgers",{
-            type:'POST',
-            data:newBurger
-        }).then(function(){
-            console.log("Burger added....");
-            location.reload();
-        });
-
-        
+    $.ajax("/api/burgers", {
+      type: 'POST',
+      data: newBurger
+    }).then(function () {
+      console.log("Burger added....");
+      location.reload();
     });
-    $('.btnDevoured').on('click',function(){
-        // alert('on devoured...');
-        // alert($(this).data('id'));
 
-        var id = $(this).data("id");
+
+  });
+  $('.btnDevoured').on('click', function () {
+
+
+    var id = $(this).data("id");
     var devourState = 1;
 
     var newDevourState = {
-      devoured:devourState
+      devoured: devourState
     };
 
     // Send the PUT request.
@@ -34,16 +31,12 @@ $(function(){
       type: "PUT",
       data: newDevourState
     }).then(
-      function() {
+      function () {
         console.log("changed Devoured to", devourState);
         // Reload the page to get the updated list
         location.reload();
       }
     );
 
-    })
+  })
 })
-
-
-
-
